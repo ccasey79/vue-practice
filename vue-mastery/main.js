@@ -3,6 +3,9 @@ var app = new Vue ( {
     el: '#app',
     data: {
         product: 'Boots',
-        description: 'Have a full range of boots available, with sizes from 5 to 14'
+        image: 'images/scrat.jpg',
+        inStock: false,
+        onSale: true,
+        details: ["80% cotton", "Jet Black", "Very robust" ]
     }
-})
+});
