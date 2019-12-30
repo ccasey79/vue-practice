@@ -4,22 +4,45 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product App</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
 
 </head>
 
 <body>
     <div id="app">
 
+        <greeting></greeting>
+
         <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
             <p v-show="inStock">In Stock</p>
             <p v-if="onSale">On Sale</p>
             <p v-else>Not for Sale</p>
         </div>
 
-        <ul>
+        <div>
             <li v-for="detail in details">{{ detail }}</li>
-        </ul>
+        </div>
+        </br>
+        <div>
+            <li v-for="size in sizes">{{ size }}</li>
+        </div>
+
+        <div v-for="variant in variants" :key="variant.variantId">
+            <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantName }}</p>
+        </div>
+
+        <button v-on:click="addToCart" 
+                :disabled="!inStock"
+                :class="{ disabledButton: !inStock }">Add to Cart</button>
+
+        <button v-on:click="subtractFromCart">Remove from Cart</button>
+
+        <p :class="{ stockText: !inStock }">Out of Stock</p>
+
+        <div class="cart">
+            <p>Cart {{ cart }}</p>
+        </div>
 
         <div class="product-image">
             <img v-bind:src="image">    

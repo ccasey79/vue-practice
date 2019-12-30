@@ -1,0 +1,14 @@
+
+body {
+    background-color: #eee;
+}
+
+.disabledButton {
+    background-color: #d8d8d8;
+}
+
+.stockText {
+    text-decoration: line-through;
+}
+
+
