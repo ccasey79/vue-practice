@@ -10,43 +10,12 @@
 
 <body>
     <div id="app">
+        <h1>{{ greet('Afternoon') }}</h1>
+        <p>Name: {{ name }}</p>
+        <p>Job: {{ job }}</p>
+        <a v-bind:href="website">The Net Ninja</a>
+        <p v-html="websiteTag"></p>
 
-        <greeting></greeting>
-
-        <div class="product-info">
-            <h1>{{ title }}</h1>
-            <p v-show="inStock">In Stock</p>
-            <p v-if="onSale">On Sale</p>
-            <p v-else>Not for Sale</p>
-        </div>
-
-        <div>
-            <li v-for="detail in details">{{ detail }}</li>
-        </div>
-        </br>
-        <div>
-            <li v-for="size in sizes">{{ size }}</li>
-        </div>
-
-        <div v-for="variant in variants" :key="variant.variantId">
-            <p @mouseover="updateProduct(variant.variantImage)">{{ variant.variantName }}</p>
-        </div>
-
-        <button v-on:click="addToCart" 
-                :disabled="!inStock"
-                :class="{ disabledButton: !inStock }">Add to Cart</button>
-
-        <button v-on:click="subtractFromCart">Remove from Cart</button>
-
-        <p :class="{ stockText: !inStock }">Out of Stock</p>
-
-        <div class="cart">
-            <p>Cart {{ cart }}</p>
-        </div>
-
-        <div class="product-image">
-            <img v-bind:src="image">    
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
