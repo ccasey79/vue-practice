@@ -10,11 +10,56 @@
 
 <body>
     <div id="app">
-        <h1>{{ greet('Afternoon') }}</h1>
-        <p>Name: {{ name }}</p>
-        <p>Job: {{ job }}</p>
-        <a v-bind:href="website">The Net Ninja</a>
-        <p v-html="websiteTag"></p>
+        <!-- Data & Methods-->
+        <!-- <h1>Data & Methods</h1>
+        <h1>{{greet('afternoon')}}</h1>
+        <p>{{name}}</p> -->
+
+        <!-- Data Binding -->
+        <!-- <h1>Data Binding</h1>
+        <a v-bind:href="website">google.co.uk</a>
+        <br/>
+        <br/>
+        <input type="text" v-bind:value="name"/> -->
+
+        <!-- Events -->
+        <!-- <h1>Events</h1>
+        <button v-on:click="add">Add a Year</button>     
+        <button v-on:click="subtract">Subtract a Year</button>     
+        <p>My age is {{ age }}</p>
+
+        <h3>Event Modifier</h3>
+        <a v-on:click.prevent="click" href="http://www.google.co.uk">Google</a> -->
+
+        <!-- Two Way data binding-->
+        <!-- <h1>Two Way Data Binding</h1>    
+        <input type="text" v-model="name" /><br />
+        <span>{{ name }}</span>
+        <input type="text" v-model="age" /><br />    
+        <span>{{ age }}</span> -->
+
+        <!-- Looping V-FOR -->
+        <h1>Looping V-For</h1>
+        <ul>
+            <li v-for="character in characters">{{ character }}</li>
+        </ul>
+        <ul>
+            <li v-for="ninja in ninjas">{{ ninja.name }} - {{ ninja.age }}</li>
+        </ul>
+
+
+
+
+
+
+        <!--Conditionals-->
+        <!-- <h1>Conditionals</h1>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button> -->
+        <!-- <p v-if="error">There has been an error</p>
+        <p v-else-if="success">Whooo Success!!</p> -->
+        <!-- <p v-show="error">There has been an error</p>
+        <p v-show="success">Whooo, Success!</p> -->
 
     </div>
 

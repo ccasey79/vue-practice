@@ -12,16 +12,32 @@ Vue.component('greeting', {
 var app = new Vue ( {
     el: '#app',
     data: {
-        name: 'Natalie',
-        job: 'Ninja',
-        website: 'http://www.google.com',
-        websiteTag: '<a href="http://www.google.com">Google</a>'
+        name: "",
+        website: 'http://www.google.co.uk',
+        age: "",
+        characters: ['Fred', 'Joe', 'Pat', 'Bert'],
+        ninjas: [
+            {name: 'Ryu', age: 25},
+            {name: 'Ken', age: 30},
+            {name: 'Yoshi', age: 20}
+        ]
     },
     methods: {
         greet: function(time) {
-            return 'Good ' +  time + ' ' + this.name;
-        }
+            return 'Good ' + time + ' ' + this.name;
+        },
 
+        add: function() {
+            this.age ++;
+        },
+        
+        subtract: function() {
+            this.age --;
+        },
+
+        click: function() {
+            alert('You bet your life!');
+        }
     },
     computed: {
 
