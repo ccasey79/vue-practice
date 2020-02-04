@@ -12,31 +12,49 @@ Vue.component('greeting', {
 var app = new Vue ( {
     el: '#app',
     data: {
-        name: "",
-        website: 'http://www.google.co.uk',
-        age: "",
-        characters: ['Fred', 'Joe', 'Pat', 'Bert'],
-        ninjas: [
-            {name: 'Ryu', age: 25},
-            {name: 'Ken', age: 30},
-            {name: 'Yoshi', age: 20}
-        ]
+        // name: "",
+        // website: 'http://www.google.co.uk',
+        // age: "",
+        // characters: ['Fred', 'Joe', 'Pat', 'Bert'],
+        // ninjas: [
+        //     {name: 'Ryu', age: 25},
+        //     {name: 'Ken', age: 30},
+        //     {name: 'Yoshi', age: 20}
+        // ],
+        // error: false,
+        // success: false
+
+        health: 100,
+        ended: false
     },
     methods: {
-        greet: function(time) {
-            return 'Good ' + time + ' ' + this.name;
-        },
+        // greet: function(time) {
+        //     return 'Good ' + time + ' ' + this.name;
+        // },
 
-        add: function() {
-            this.age ++;
-        },
+        // add: function() {
+        //     this.age ++;
+        // },
         
-        subtract: function() {
-            this.age --;
+        // subtract: function() {
+        //     this.age --;
+        // },
+
+        // click: function() {
+        //     alert('You bet your life!');
+        // }
+
+        punch: function() {
+            this.health -= 10;
+
+            if(this.health <= 0) {
+                this.ended = true;
+            }
         },
 
-        click: function() {
-            alert('You bet your life!');
+        restart: function() {
+            this.health = 100;
+            this.ended = false;
         }
     },
     computed: {

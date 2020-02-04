@@ -39,27 +39,39 @@
         <span>{{ age }}</span> -->
 
         <!-- Looping V-FOR -->
-        <h1>Looping V-For</h1>
+        <!-- <h1>Looping V-For</h1>
         <ul>
             <li v-for="character in characters">{{ character }}</li>
         </ul>
         <ul>
             <li v-for="ninja in ninjas">{{ ninja.name }} - {{ ninja.age }}</li>
-        </ul>
-
-
-
-
-
+        </ul> -->
 
         <!--Conditionals-->
         <!-- <h1>Conditionals</h1>
         <button v-on:click="error = !error">Toggle Error</button>
-        <button v-on:click="success = !success">Toggle Success</button> -->
-        <!-- <p v-if="error">There has been an error</p>
+        <button v-on:click="success = !success">Toggle Success</button>
+        <p v-if="error">There has been an error</p>
         <p v-else-if="success">Whooo Success!!</p> -->
         <!-- <p v-show="error">There has been an error</p>
         <p v-show="success">Whooo, Success!</p> -->
+
+        <!-- Punchbag Game -->
+
+        <!-- Bag image -->
+        <div id="bag" v-bind:class="{burst: ended}"></div>
+
+        <!-- Bag health -->
+        <div id="bag-health">
+            <div v-bind:style="{width: health + '%'}"></div>
+        </div>
+
+
+        <!-- Game controls -->
+        <div id="controls">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
 
     </div>
 
