@@ -24,8 +24,11 @@ var app = new Vue ( {
         // error: false,
         // success: false
 
-        health: 100,
-        ended: false
+        // health: 100,
+        // ended: false
+        seen: true,
+        name: 'Lauren Goodger',
+        features: ['brown hair', 'tanned', 'round bum', 'big tits']
     },
     methods: {
         // greet: function(time) {
@@ -44,18 +47,18 @@ var app = new Vue ( {
         //     alert('You bet your life!');
         // }
 
-        punch: function() {
-            this.health -= 10;
+        // punch: function() {
+        //     this.health -= 10;
 
-            if(this.health <= 0) {
-                this.ended = true;
-            }
-        },
+        //     if(this.health <= 0) {
+        //         this.ended = true;
+        //     }
+        // },
 
-        restart: function() {
-            this.health = 100;
-            this.ended = false;
-        }
+        // restart: function() {
+        //     this.health = 100;
+        //     this.ended = false;
+        // }
     },
     computed: {
 

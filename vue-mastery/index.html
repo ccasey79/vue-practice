@@ -59,19 +59,30 @@
         <!-- Punchbag Game -->
 
         <!-- Bag image -->
-        <div id="bag" v-bind:class="{burst: ended}"></div>
+        <!-- <div id="bag" v-bind:class="{burst: ended}"></div> -->
 
         <!-- Bag health -->
-        <div id="bag-health">
+        <!-- <div id="bag-health">
             <div v-bind:style="{width: health + '%'}"></div>
-        </div>
+        </div> -->
 
 
         <!-- Game controls -->
-        <div id="controls">
+        <!-- <div id="controls">
             <button v-on:click="punch" v-show="!ended">Punch</button>
             <button v-on:click="restart">Restart</button>
+        </div> -->
+
+        <div class="btn-container">
+            <button v-on:click="seen = !seen">Toggle</button>
         </div>
+
+        <p class="title" v-if="seen">{{ name }}</p>
+
+        <ul>
+            <li class="feature-list" v-for="feature in features" v-if="seen">{{ feature }}</li>
+        </ul>
+        <img src="images/goodger.jpeg" v-if="seen" class="lauren" alt="Lauren Goodger" />
 
     </div>
 
