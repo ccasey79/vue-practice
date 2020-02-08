@@ -82,7 +82,16 @@
         <ul>
             <li class="feature-list" v-for="feature in features" v-if="seen">{{ feature }}</li>
         </ul>
+
+        <div class="description-content">
+            <input type="text" v-model="description" />
+            <p>{{description}}</p>
+        </div>
+
         <img src="images/goodger.jpeg" v-if="seen" class="lauren" alt="Lauren Goodger" />
+
+        <p class="title">Lauren on a night out</p>
+        <img v-bind:src="image" class="lauren" alt="Lauren"/>
 
     </div>
 

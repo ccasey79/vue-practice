@@ -28,7 +28,9 @@ var app = new Vue ( {
         // ended: false
         seen: true,
         name: 'Lauren Goodger',
-        features: ['brown hair', 'tanned', 'round bum', 'big tits']
+        features: ['brown hair', 'tanned', 'round bum', 'big tits'],
+        image: 'images/lauren.jpg',
+        description: ''
     },
     methods: {
         // greet: function(time) {
