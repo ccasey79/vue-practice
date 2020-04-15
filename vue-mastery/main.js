@@ -1,68 +1,35 @@
 
-Vue.component('greeting', {
-    template: `<p>Hi, my name is {{ name }} </p>`,
-    data: function() {
-        return {
-            name: 'Hulk'
-        }
-    }
-});
-
-
-var app = new Vue ( {
+var app = new Vue ({
     el: '#app',
     data: {
-        // name: "",
-        // website: 'http://www.google.co.uk',
-        // age: "",
-        // characters: ['Fred', 'Joe', 'Pat', 'Bert'],
-        // ninjas: [
-        //     {name: 'Ryu', age: 25},
-        //     {name: 'Ken', age: 30},
-        //     {name: 'Yoshi', age: 20}
-        // ],
-        // error: false,
-        // success: false
+        product: 'Socks',
+        image: 'images/sock.jpg',
+        inStock: false,
+        details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+        variants: [
+            {
+                variantId: 2234,
+                variantColor: 'green',
+                variantImage: 'images/sock2.jpg'
+            },
 
-        // health: 100,
-        // ended: false
-        seen: true,
-        name: 'Lauren Goodger',
-        features: ['brown hair', 'tanned', 'round bum', 'big tits'],
-        image: 'images/lauren.jpg',
-        description: ''
+            {
+                variantId: 2235,
+                variantColor: 'blue',
+                variantImage: 'images/sock3.jpg'
+            }
+        ],
+        sizes: ['Size 8', 'Size 9', 'Size 11', 'Size 12'],
+        cart: 0
+
     },
     methods: {
-        // greet: function(time) {
-        //     return 'Good ' + time + ' ' + this.name;
-        // },
+        addToCart: function() {
+            this.cart += 1
+        },
 
-        // add: function() {
-        //     this.age ++;
-        // },
-        
-        // subtract: function() {
-        //     this.age --;
-        // },
-
-        // click: function() {
-        //     alert('You bet your life!');
-        // }
-
-        // punch: function() {
-        //     this.health -= 10;
-
-        //     if(this.health <= 0) {
-        //         this.ended = true;
-        //     }
-        // },
-
-        // restart: function() {
-        //     this.health = 100;
-        //     this.ended = false;
-        // }
-    },
-    computed: {
-
+        updateProduct: function(variantImage) {
+            this.image = variantImage
+        }
     }
-});
+})
